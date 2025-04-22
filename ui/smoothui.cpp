@@ -50,8 +50,7 @@ smoothUi::smoothUi(trackHandler *_track, QWidget *parent)
   ui->smoothUnitTree->setColumnWidth(5, 60);
   ui->smoothUnitTree->setColumnWidth(6, 60);
 
-  ui->optsFrame->hide();
-  ui->regionFrame->hide();
+  ui->frameExpand->hide();
   ui->removeButton->setEnabled(false);
 
   ui->upButton->hide();
@@ -257,10 +256,11 @@ void smoothUi::on_smoothUnitTree_itemSelectionChanged() {
   phantomChanges = true;
 
   if (ui->smoothUnitTree->selectedItems().size() == 0) {
-    ui->optsFrame->hide();
-    ui->regionFrame->hide();
+    ui->frameExpand->hide();
     ui->removeButton->setEnabled(false);
     return;
+  } else {
+    ui->frameExpand->show();
   }
 
   QTreeWidgetItem *selected = ui->smoothUnitTree->selectedItems().at(0);
@@ -273,16 +273,16 @@ void smoothUi::on_smoothUnitTree_itemSelectionChanged() {
   if (m_track->smoothList[i]->sec != NULL) {
     ui->lengthBox->setValue(curHandler->getLength() / 1000.);
     ui->iterBox->setValue(curHandler->getIterations());
-    ui->optsFrame->show();
-    ui->regionFrame->hide();
+    ui->optsFrame->setEnabled(true);
+    ui->regionFrame->setEnabled(false);
     ui->removeButton->setEnabled(false);
   } else {
     ui->lengthBox->setValue(curHandler->getLength() / 1000.);
     ui->iterBox->setValue(curHandler->getIterations());
     ui->fromBox->setValue(curHandler->getFrom() / 1000.);
     ui->toBox->setValue(curHandler->getTo() / 1000.);
-    ui->optsFrame->show();
-    ui->regionFrame->show();
+    ui->optsFrame->setEnabled(true);
+    ui->regionFrame->setEnabled(true);
     ui->removeButton->setEnabled(true);
   }
 

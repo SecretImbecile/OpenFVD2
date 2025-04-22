@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>Exportui</class>
  <widget class="QDialog" name="Exportui">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>300</width>
-    <height>270</height>
-   </rect>
-  </property>
   <property name="sizePolicy">
    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
@@ -18,208 +10,202 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>300</width>
-    <height>240</height>
+    <width>360</width>
+    <height>480</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>300</width>
-    <height>270</height>
+    <width>360</width>
+    <height>480</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Export Track</string>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="1">
-      <widget class="QComboBox" name="exportFromBox"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="exportFromLabel">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Export From Section:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="exportTypeLabel">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Exporter Type</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QComboBox" name="exportToBox"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="exportToLabel">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Export To Section</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="exportTrackLabel">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Export Track</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="exportTrackBox"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="exportTypeBox">
-       <item>
-        <property name="text">
-         <string>NoLimits2 Exporter</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>NoLimits2 Exporter (CSV)</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Tangent Exporter</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Spline Exporter</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QFrame" name="nl1_frame">
-     <property name="frameShape">
-      <enum>QFrame::Shape::NoFrame</enum>
+    <widget class="QFrame" name="frameType">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Plain</enum>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <layout class="QGridLayout" name="nl1_layout">
-        <item row="2" column="0" colspan="2">
-         <widget class="QCheckBox" name="noHeartLineBox">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Export without heartlining the Track</string>
-          </property>
-         </widget>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="exportTypeLabel">
+        <property name="text">
+         <string>Exporter:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="exportTypeBox">
+        <item>
+         <property name="text">
+          <string>NoLimits2 Exporter</string>
+         </property>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="exportMPerNodeLabel">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Segment Length (in m)</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>NoLimits2 Exporter (CSV)</string>
+         </property>
         </item>
-        <item row="1" column="1">
-         <widget class="QDoubleSpinBox" name="segmentLengthBox">
-          <property name="minimum">
-           <double>0.200000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>10.000000000000000</double>
-          </property>
-          <property name="singleStep">
-           <double>0.200000000000000</double>
-          </property>
-          <property name="value">
-           <double>2.000000000000000</double>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Tangent Exporter</string>
+         </property>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="relThreshLabel">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Threshold for RelRoll (in °)</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Spline Exporter</string>
+         </property>
         </item>
-        <item row="0" column="1">
-         <widget class="QDoubleSpinBox" name="relThresBox">
-          <property name="minimum">
-           <double>75.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>90.000000000000000</double>
-          </property>
-          <property name="singleStep">
-           <double>1.000000000000000</double>
-          </property>
-          <property name="value">
-           <double>85.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </widget>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
+    <widget class="QGroupBox" name="groupBoxTrack">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="title">
+      <string>Sections</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="exportTrackLabel">
+        <property name="text">
+         <string>Track:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="exportTrackBox"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="exportFromBox"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="exportFromLabel">
+        <property name="text">
+         <string>From Section:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="exportToBox"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="exportToLabel">
+        <property name="text">
+         <string>To Section:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxExport">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Export Settings</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="exportMPerNodeLabel">
+        <property name="text">
+         <string>Segment Length (m):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="segmentLengthBox">
+        <property name="minimum">
+         <double>0.200000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>10.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>0.200000000000000</double>
+        </property>
+        <property name="value">
+         <double>2.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="relThreshLabel">
+        <property name="text">
+         <string>Threshold for RelRoll (°):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="relThresBox">
+        <property name="minimum">
+         <double>75.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>90.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>1.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>85.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="noHeartLineBox"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelHeartline">
+        <property name="text">
+         <string>Disable Heartlining:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
-      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

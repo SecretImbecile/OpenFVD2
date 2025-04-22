@@ -37,6 +37,8 @@ conversionPanel::conversionPanel(QWidget *parent)
   ui->meterSpin->setSuffix(QString(" m"));
   ui->feetSpin->setSuffix(QString(" ft"));
   ui->mileSpin->setSuffix(QString(" miles"));
+
+  ui->tableHeartlines->setColumnWidth(0, 256);
 }
 
 conversionPanel::~conversionPanel() { delete ui; }

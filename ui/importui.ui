@@ -6,16 +6,37 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>360</width>
     <height>240</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>360</width>
+    <height>240</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>360</width>
+    <height>480</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Import Track</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTreeWidget" name="treeWidget">
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
      <property name="rootIsDecorated">
       <bool>false</bool>
      </property>
@@ -25,28 +46,34 @@
      <attribute name="headerVisible">
       <bool>true</bool>
      </attribute>
+     <attribute name="headerMinimumSectionSize">
+      <number>80</number>
+     </attribute>
+     <attribute name="headerDefaultSectionSize">
+      <number>100</number>
+     </attribute>
+     <attribute name="headerStretchLastSection">
+      <bool>true</bool>
+     </attribute>
      <column>
       <property name="text">
-       <string>No</string>
+       <string>No.</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Name</string>
+       <string>Track Name</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Import?</string>
+       <string>Import</string>
       </property>
      </column>
     </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
