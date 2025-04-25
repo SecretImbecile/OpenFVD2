@@ -52,13 +52,13 @@ MainWindow::MainWindow(QWidget *parent)
                            (~Qt::WindowContextHelpButtonHint));
 
   ui->setupUi(this);
+  ui->frameBottom->hide();
 
-  glView = new glViewWidget(ui->splitter);
+  glView = new glViewWidget(this);
   glView->setObjectName(QStringLiteral("GraphicsView"));
-  glView->setMinimumSize(QSize(0, 0));
   glView->setMouseTracking(true);
   glView->setFocusPolicy(Qt::StrongFocus);
-  ui->splitter->addWidget(glView);
+  ui->frameTopRight->layout()->replaceWidget(ui->placeholderGlView, glView);
 
   // set up all sub widgets etc
   project = ui->projectTab;
@@ -92,12 +92,7 @@ MainWindow::MainWindow(QWidget *parent)
   mConversion->setWindowFlags(mConversion->windowFlags() &
                               (~Qt::WindowContextHelpButtonHint));
 
-  // ui->customPlot->hide();
   mGraphWidget = NULL;
-
-  delete ui->customPlot;
-  ui->customPlot = NULL;
-
   exportScreen = new exportUi(this, ui->projectTab);
   exportScreen->setWindowFlags(exportScreen->windowFlags() |
                                Qt::CustomizeWindowHint);
@@ -623,7 +618,14 @@ void MainWindow::on_tabChooser_currentChanged(int index) {
     // this->updatesEnabled(false);
     trackWidget *widget = (trackWidget *)ui->tabChooser->widget(index);
     mGraphWidget = widget->inTrack->graphWidgetItem;
-    ui->vertSplitter->insertWidget(1, mGraphWidget);
+
+    if (ui->placeholderGraph) {
+        delete ui->placeholderGraph;
+        ui->placeholderGraph = nullptr;
+    }
+    ui->frameGraph->layout()->addWidget(mGraphWidget);
+    ui->frameBottom->show();
+
     mGraphWidget->show();
     mGraphWidget->update();
     ui->tabChooser->setCurrentIndex(0); // go to index 0 to apply size changes
@@ -635,6 +637,8 @@ void MainWindow::on_tabChooser_currentChanged(int index) {
     ui->tabChooser->setGeometry(0, 0, ui->tabChooser->width(),
                                 ui->tabChooser->height() - 150);
     ui->tabChooser->setCurrentIndex(index);
+  } else {
+      ui->frameBottom->hide();
   }
   setUndoButtons();
   phantomChanges = false;
@@ -674,9 +678,8 @@ void MainWindow::hideAll() {
   ui->centralWidget->layout()->setContentsMargins(0, 0, 0, 0);
   ui->menuBar->hide();
   ui->infoFrame->hide();
-  if (mGraphWidget)
-    mGraphWidget->hide();
-  ui->tabFrame->hide();
+  ui->frameBottom->hide();
+  ui->frameTopLeft->hide();
   ui->statusBar->hide();
 }
 
@@ -684,9 +687,8 @@ void MainWindow::showAll() {
   ui->centralWidget->layout()->setContentsMargins(9, 9, 9, 9);
   ui->menuBar->show();
   ui->infoFrame->show();
-  if (mGraphWidget)
-    mGraphWidget->show();
-  ui->tabFrame->show();
+  ui->frameBottom->show();
+  ui->frameTopLeft->show();
   ui->statusBar->show();
 }
 

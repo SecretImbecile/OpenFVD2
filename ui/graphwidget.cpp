@@ -38,9 +38,6 @@ graphWidget::graphWidget(QWidget *parent, trackHandler *_track)
   selTrack = _track;
   selFunc = NULL;
 
-  this->setMaximumHeight(300);
-  this->setMinimumHeight(200);
-
   ui->povLine->hide();
 
   ui->selTree->setColumnWidth(0, 180);

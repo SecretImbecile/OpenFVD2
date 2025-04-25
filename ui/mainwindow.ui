@@ -3,20 +3,20 @@
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="windowModality">
-   <enum>Qt::WindowModality::NonModal</enum>
+   <enum>Qt::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>656</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>1280</width>
+    <height>720</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -37,19 +37,46 @@
     <bool>false</bool>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QSplitter" name="vertSplitter">
       <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
+       <enum>Qt::Vertical</enum>
       </property>
-      <widget class="QFrame" name="mainFrame">
-       <property name="frameShape">
-        <enum>QFrame::Shape::NoFrame</enum>
+      <property name="opaqueResize">
+       <bool>false</bool>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QFrame" name="frameTop">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>240</height>
+        </size>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <property name="leftMargin">
          <number>0</number>
         </property>
@@ -64,42 +91,33 @@
         </property>
         <item>
          <widget class="QSplitter" name="splitter">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="lineWidth">
-           <number>5</number>
-          </property>
           <property name="orientation">
-           <enum>Qt::Orientation::Horizontal</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="opaqueResize">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
-          <property name="handleWidth">
-           <number>4</number>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
           </property>
-          <widget class="QFrame" name="tabFrame">
+          <widget class="QFrame" name="frameTopLeft">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="maximumSize">
+           <property name="minimumSize">
             <size>
              <width>320</width>
-             <height>16777215</height>
+             <height>0</height>
             </size>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::NoFrame</enum>
+            <enum>QFrame::Panel</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
+            <enum>QFrame::Sunken</enum>
            </property>
            <layout class="QGridLayout" name="gridLayout">
             <property name="leftMargin">
@@ -114,22 +132,13 @@
             <property name="bottomMargin">
              <number>0</number>
             </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QTabWidget" name="tabChooser">
-              <property name="minimumSize">
-               <size>
-                <width>320</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>320</width>
-                <height>16777214</height>
-               </size>
-              </property>
               <property name="tabPosition">
-               <enum>QTabWidget::TabPosition::North</enum>
+               <enum>QTabWidget::North</enum>
               </property>
               <property name="currentIndex">
                <number>0</number>
@@ -152,36 +161,112 @@
             </item>
            </layout>
           </widget>
+          <widget class="QFrame" name="frameTopRight">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="placeholderGlView">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>320</width>
+                <height>240</height>
+               </size>
+              </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::PreventContextMenu</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Panel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="text">
+               <string>Placeholder
+(OpenGL View)</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="frameBottom">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QFrame" name="infoFrame">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>22</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>22</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Shadow::Raised</enum>
+           <enum>QFrame::Plain</enum>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
            <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
             <number>0</number>
            </property>
            <property name="bottomMargin">
@@ -201,14 +286,6 @@
                <height>15</height>
               </size>
              </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="contextMenuPolicy">
-              <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
-             </property>
              <property name="autoFillBackground">
               <bool>false</bool>
              </property>
@@ -219,7 +296,7 @@
               <string>Position:</string>
              </property>
              <property name="textInteractionFlags">
-              <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+              <set>Qt::NoTextInteraction</set>
              </property>
             </widget>
            </item>
@@ -230,17 +307,6 @@
                <horstretch>100</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
              </property>
              <property name="text">
               <string>Roll:</string>
@@ -255,17 +321,6 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
              <property name="text">
               <string>Pitch:</string>
              </property>
@@ -278,23 +333,6 @@
                <horstretch>100</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
              </property>
              <property name="text">
               <string>Yaw:</string>
@@ -309,17 +347,6 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
              <property name="text">
               <string>Speed:</string>
              </property>
@@ -332,17 +359,6 @@
                <horstretch>80</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
              </property>
              <property name="text">
               <string>y-Accel:</string>
@@ -357,17 +373,6 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>15</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
              <property name="text">
               <string>x-Accel:</string>
              </property>
@@ -376,42 +381,63 @@
           </layout>
          </widget>
         </item>
+        <item>
+         <widget class="QFrame" name="frameGraph">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="placeholderGraph">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>240</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Panel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
+             <property name="text">
+              <string>Placeholder
+(Graph Widget)</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
        </layout>
-      </widget>
-      <widget class="graphWidget" name="customPlot" native="true">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>310</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>325</height>
-        </size>
-       </property>
-       <property name="baseSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="cursor">
-        <cursorShape>ArrowCursor</cursorShape>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
       </widget>
      </widget>
     </item>
@@ -422,8 +448,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
-     <height>23</height>
+     <width>1280</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -652,12 +678,6 @@
    <class>projectWidget</class>
    <extends>QWidget</extends>
    <header>projectwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>graphWidget</class>
-   <extends>QWidget</extends>
-   <header>graphwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
