@@ -126,13 +126,13 @@ void transitionWidget::changeSubfunc(subfunc *_newSubfunc) {
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     break;
   case quadratic:
     ui->quadraticFrame->show();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     if (selectedFunc->isSymmetric()) {
       ui->quadraticBox->setCurrentIndex(2);
     } else if (selectedFunc->arg1 > 0.f) {
@@ -145,13 +145,13 @@ void transitionWidget::changeSubfunc(subfunc *_newSubfunc) {
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     break;
   case quartic:
     ui->quadraticFrame->hide();
     ui->quarticFrame->show();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     if (selectedFunc->isSymmetric()) {
       ui->quarticBox->setCurrentIndex(0);
       ui->quarticSpin->setVisible(false);
@@ -169,7 +169,7 @@ void transitionWidget::changeSubfunc(subfunc *_newSubfunc) {
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->show();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     if (!selectedFunc->isSymmetric()) {
       ui->quinticSpin->setVisible(false);
       ui->quinticBox->setCurrentIndex(0);
@@ -188,19 +188,19 @@ void transitionWidget::changeSubfunc(subfunc *_newSubfunc) {
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->show();
+    ui->timewarpFrame->setEnabled(true);
     break;
   case freeform:
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->hide();
+    ui->timewarpFrame->setEnabled(false);
     break;
   case tozero:
     ui->quadraticFrame->hide();
     ui->quarticFrame->hide();
     ui->quinticFrame->hide();
-    ui->timewarpFrame->hide();
+    ui->timewarpFrame->setEnabled(false);
     ui->changeSpin->setEnabled(false);
     break;
   }

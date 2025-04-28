@@ -336,12 +336,10 @@ void trackWidget::on_sectionListWidget_itemSelectionChanged() {
     inTrack->graphWidgetItem->redrawGraphs(otherArgument);
   }
 
-  ui->scrollAreaWidgetContents->adjustSize();
-  int height = ui->scrollAreaWidgetContents->height() + 5;
+  ui->groupBox->adjustSize();
+  int height = ui->groupBox->height() + 5;
   int maxheight = this->height() - ui->addButton->height() - 100;
 
-  ui->scrollArea->setMaximumHeight(height);
-  ui->scrollArea->setMinimumHeight(maxheight > height ? height : maxheight);
   return;
 }
 
