@@ -84,17 +84,24 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="stlEdit1">
+      <item row="5" column="0" colspan="2">
+       <widget class="QLineEdit" name="stlEdit2">
         <property name="placeholderText">
-         <string>STL File 1</string>
+         <string>STL File 2</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="3">
-       <widget class="Line" name="line_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="stlChooser2">
+        <property name="text">
+         <string>Browse...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="texChooser">
+        <property name="text">
+         <string>Browse...</string>
         </property>
        </widget>
       </item>
@@ -108,24 +115,24 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="texEdit">
-        <property name="placeholderText">
-         <string>Ground Texture</string>
+      <item row="2" column="0" colspan="3">
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="texChooser">
+      <item row="6" column="2">
+       <widget class="QPushButton" name="stlColorPicker2">
         <property name="text">
-         <string>Browse...</string>
+         <string>Select...</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="grdTexSizeLabel">
+      <item row="6" column="0" colspan="2">
+       <widget class="QLabel" name="stlLabelColor2">
         <property name="text">
-         <string>Ground Texture Size:</string>
+         <string>STL 2 Color:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -139,38 +146,31 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="2">
-       <widget class="QPushButton" name="stlChooser2">
-        <property name="text">
-         <string>Browse...</string>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLineEdit" name="texEdit">
+        <property name="placeholderText">
+         <string>Ground Texture</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="2">
-       <widget class="QPushButton" name="stlColorPicker2">
-        <property name="text">
-         <string>Select...</string>
+      <item row="3" column="0" colspan="2">
+       <widget class="QLineEdit" name="stlEdit1">
+        <property name="placeholderText">
+         <string>STL File 1</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0" colspan="2">
-       <widget class="QLabel" name="stlLabelColor2">
+      <item row="1" column="0" colspan="2">
+       <widget class="QLabel" name="grdTexSizeLabel">
         <property name="text">
-         <string>STL 2 Color:</string>
+         <string>Ground Texture Size:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="2">
-       <widget class="QLineEdit" name="stlEdit2">
-        <property name="placeholderText">
-         <string>STL File 2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
+      <item row="4" column="0" colspan="2">
        <widget class="QLabel" name="stlLabelColor1">
         <property name="text">
          <string>STL 1 Color:</string>
